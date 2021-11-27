@@ -12,6 +12,9 @@ console.log(rowSumOddNumbers(1))
 console.log(rowSumOddNumbers(4))
 
 
+
+// 정규표현식 공부 다시하기!!!!!
+
 function validatePIN (pin) {
   return /^(\d{4}|\d{6})$/.test(pin);
 }
@@ -24,3 +27,20 @@ console.log(validatePIN("1.234"))
 console.log(validatePIN("12.0"))
 console.log(validatePIN("82771g"))
 console.log(validatePIN("0000"))
+
+
+
+
+function tribonacci(signature, n) {
+  if(n === 0) return []
+  if(n <= 3) return signature.slice(0, n)
+  for(let i = 2; i < n-1; i++) {
+    signature.push(signature[i-2] + signature[i-1] + signature[i])
+  }
+  return signature
+}
+
+
+console.log(tribonacci([1, 1, 1], 10))
+console.log(tribonacci([0, 0, 1], 10))
+console.log(tribonacci([1, 1, 1], 1))
