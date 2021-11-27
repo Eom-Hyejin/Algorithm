@@ -44,3 +44,30 @@ function tribonacci(signature, n) {
 console.log(tribonacci([1, 1, 1], 10))
 console.log(tribonacci([0, 0, 1], 10))
 console.log(tribonacci([1, 1, 1], 1))
+
+
+function toCamelCase(str){
+  if (str.includes('-')) {
+    return makeStr(str, '-')
+  } else {
+    return makeStr(str, '_')
+  }
+}
+
+function makeStr(str, mark) {
+  str = str.split(mark)
+  str = str.map((el, idx) => {
+    if(idx >= 1) {
+      el = el.split("")
+      el[0] = el[0].toUpperCase()
+      return el.join("")
+    } else {
+      return el
+    }
+  })
+  return str.join("")
+}
+
+console.log(toCamelCase("the_stealth_warrior"))
+console.log(toCamelCase("the-stealth-warrior"))
+console.log(toCamelCase("The-Stealth-Warrior"))
