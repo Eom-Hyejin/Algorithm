@@ -79,6 +79,7 @@ console.log(findEvenIndex([1,2,3,4,5,6]))
 console.log(findEvenIndex([20,10,-80,10,10,15,35]))
 
 
+
 function centry(year) {
   return Math.ceil(year/100);
   // return year/100 === Math.floor(year/100) ? year/100 : Math.floor(year/100) + 1
@@ -87,3 +88,26 @@ function centry(year) {
 console.log(centry(1705))
 console.log(centry(1900))
 console.log(centry(89))
+
+
+
+function binaryArrayToNumber(arr) {
+  return Number.parseInt(arr.join(""), 2)
+}
+
+console.log(binaryArrayToNumber([0, 0, 0, 1]))
+console.log(binaryArrayToNumber([0, 0, 1, 0]))
+console.log(binaryArrayToNumber([1, 1, 1, 1]))
+
+
+
+function basicOp(operation, value1, value2) {
+  // if(operation === '+') return value1 + value2
+  // if(operation === '-') return value1 - value2
+  // if(operation === '*') return value1 * value2
+  // if(operation === '/') return value1 / value2
+  return eval(value1+operation+value2);
+}
+
+console.log(basicOp('+', 4, 7))
+console.log(basicOp('*', 5, 5))
