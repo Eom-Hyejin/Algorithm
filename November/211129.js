@@ -1,7 +1,7 @@
 function isPangram (string) {
   return 'abcdefghijklmnopqrstuvwxyz'.split('')
   .every((x) => string.toLowerCase().includes(x));
-  
+
   // string = string.toUpperCase().replace(/(\s*)/g, "")
   // let regex = /[^A-Z]/g
   // string = string.replace(regex, "")
@@ -20,3 +20,20 @@ function isPangram (string) {
 console.log(isPangram("The quick brown fox jumps over the lazy dog."))
 console.log(isPangram("This is not a pangram."))
 console.log(isPangram("ABCD45EFGH,IJK,LMNOPQR56STUVW3XYZ"))
+
+
+
+function divisors (integer) {
+  let result = []
+  for(let i = 2; i < integer; i++) {
+    if(integer % i === 0) {
+      result.push(i)
+    }
+  }
+  return result.length === 0 ? `${integer} is prime` : result
+}
+
+
+console.log(divisors(15))
+console.log(divisors(12))
+console.log(divisors(13))
