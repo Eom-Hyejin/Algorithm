@@ -59,3 +59,19 @@ console.log(isPrime(75))
 console.log(isPrime(-5))
 console.log(isPrime(-8))
 console.log(isPrime(45))
+
+
+
+function comp (array1, array2) {
+  if(array1 === null || array2 === null) return false;
+  array1 = array1.sort((a, b) => a - b).map((el) => Math.pow(el, 2))
+  array2 = array2.sort((a, b) => a - b)
+
+  return array1.every((ele, idx) => ele === array2[idx])
+}
+
+
+console.log(comp([121, 144, 19, 161, 19, 144, 19, 11], 
+  [11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19]))
+
+  console.log(comp([ 121, 144, 19, 161, 19, 144, 19, 11, 1008 ], [ 121, 14641, 20736, 36100, 25921, 361, 20736, 361 ]))
