@@ -37,3 +37,25 @@ function divisors (integer) {
 console.log(divisors(15))
 console.log(divisors(12))
 console.log(divisors(13))
+
+
+
+function isPrime (num) {
+  if(num <= 1) {
+    return false;
+  }
+  for(let i = 2; i <= Math.floor(Math.sqrt(num)); i++){
+    if(num % i === 0){
+      return false; 
+    }
+  }
+  return true; 
+}
+
+
+console.log(isPrime(3))
+console.log(isPrime(5))
+console.log(isPrime(75))
+console.log(isPrime(-5))
+console.log(isPrime(-8))
+console.log(isPrime(45))
