@@ -150,3 +150,14 @@ console.log(findNb(40539911473216))
 console.log(findNb(1071225))
 console.log(findNb(135440716410000))
 console.log(findNb(24723578342962))
+
+
+
+function digitize(n) {
+  // return String(n).split("").map((el) => Number(el)).reverse()
+  return String(n).split("").map(Number).reverse()
+}
+
+
+console.log(digitize(348597))
+console.log(digitize(35231))
