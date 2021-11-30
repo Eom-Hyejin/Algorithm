@@ -37,3 +37,43 @@ function decodeMorse (morseCode) {
 }
 
 // console.log(decodeMorse(('.... . -.--   .--- ..- -.. .')))
+
+
+
+function list (names) {
+  // let nameArr = names.map((el) => el.name)
+  // let result = ""
+  // if (nameArr.length >= 3) {
+  //   let arr1 = nameArr.slice(0, nameArr.length - 2)
+  //   let arr2 = nameArr.slice(nameArr.length - 2)
+  //   for(let i = 0; i < arr1.length; i++) {
+  //     result += `${nameArr[i]}, `
+  //   }
+  //   return `${result}${arr2[0]} & ${arr2[1]}`
+  // }
+  // else if (nameArr.length === 2) {
+  //   return `${nameArr[0]} & ${nameArr[1]}`
+  // } 
+  // else if (nameArr.length === 1) {
+  //   return nameArr[0]
+  // } 
+  // else {
+  //   return ''
+  // }
+  return names.reduce((prev, current, index, array) => {
+    if (index === 0){
+      return current.name;
+    }
+    else if (index === array.length - 1){
+      return prev + ' & ' + current.name;
+    } 
+    else {
+      return prev + ', ' + current.name;
+    }
+  }, '');
+}
+
+
+console.log(list([{name: 'Bart'},{name: 'Lisa'},{name: 'Maggie'},{name: 'Homer'},{name: 'Marge'}]))
+console.log(list([{name: 'Bart'},{name: 'Lisa'},{name: 'Maggie'}]))
+console.log(list([{name: 'Bart'},{name: 'Lisa'}]))
