@@ -33,3 +33,21 @@ function sortArray(array) {
 console.log(sortArray([7, 1]))
 console.log(sortArray([5, 3, 2, 8, 1, 4]))
 console.log(sortArray([5, 3, 1, 8, 0]))
+
+
+
+function SeriesSum(n) {
+  let result = 0
+  let count = 1
+  while(n > 0) {
+    result += 1 / count
+    n--
+    count += 3
+  }
+  return result.toFixed(2)
+}
+
+console.log(SeriesSum(1))
+console.log(SeriesSum(2))
+console.log(SeriesSum(3))
+console.log(SeriesSum(4))
