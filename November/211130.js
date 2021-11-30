@@ -161,3 +161,14 @@ function digitize(n) {
 
 console.log(digitize(348597))
 console.log(digitize(35231))
+
+
+
+function abbrevName(name) {
+  return name.split(" ").map((el) => el.split("")[0]).join(".").toUpperCase()
+}
+
+
+console.log(abbrevName("Sam Harris"))
+console.log(abbrevName("Patrick Feenan"))
+console.log(abbrevName("george clooney"))
