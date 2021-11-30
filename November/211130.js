@@ -17,3 +17,23 @@ function findMissingLetter (array) {
 
 console.log(findMissingLetter(['a','b','c','d','f']))
 console.log(findMissingLetter(['O','Q','R','S']))
+
+
+
+function decodeMorse (morseCode) {
+  // let result = '';
+  // let array = morseCode.split('  ');
+  // let start = [];
+  // for (let i = 0; i < array.length ; i++) {
+  //   start = array[i].split(' ');
+  //   start = start.filter(Boolean)
+  //   result += ' '
+  //   for (let j = 0; j < start.length; j++) {
+  //   result += MORSE_CODE[start[j]]
+  //   }
+  // }
+  // return result.trim()
+  return morseCode.trim().split(/  | /).map((el) => MORSE_CODE[el] || ' ').join('');
+}
+
+// console.log(decodeMorse(('.... . -.--   .--- ..- -.. .')))
