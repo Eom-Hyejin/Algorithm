@@ -117,3 +117,36 @@ console.log(validParentheses( "())(" ))
 console.log(validParentheses( "()" ))
 console.log(validParentheses( "())" ))
 console.log(validParentheses( "())(()" ))
+
+
+
+function findNb(m) {
+  // let n = 1;
+
+  // while(Math.pow(n*(n+1)/2, 2) <= m) {
+  //   if(Math.pow(n*(n+1)/2, 2) === m) {
+  //     return n
+  //   }
+  //   else {
+  //     n++;
+  //   }
+  // }
+  // return -1;
+
+  // let n = 0
+  // while (m > 0) m -= ++n**3
+  // return m ? -1 : n
+
+  let n = 0
+  while (m > 0) {
+    n++
+    m -= Math.pow(n, 3)
+  }
+  return m ? -1 : n
+}
+
+
+console.log(findNb(40539911473216))
+console.log(findNb(1071225))
+console.log(findNb(135440716410000))
+console.log(findNb(24723578342962))
