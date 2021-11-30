@@ -1,4 +1,4 @@
-function findMissingLetter (array) {
+function findMissingLetter(array) {
   // if(array[0] === array[0].toUpperCase()) {
   //   let str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
   //   let idx = str.indexOf(array[0])
@@ -20,7 +20,7 @@ console.log(findMissingLetter(['O','Q','R','S']))
 
 
 
-function decodeMorse (morseCode) {
+function decodeMorse(morseCode) {
   // let result = '';
   // let array = morseCode.split('  ');
   // let start = [];
@@ -40,7 +40,7 @@ function decodeMorse (morseCode) {
 
 
 
-function list (names) {
+function list(names) {
   // let nameArr = names.map((el) => el.name)
   // let result = ""
   // if (nameArr.length >= 3) {
@@ -77,3 +77,43 @@ function list (names) {
 console.log(list([{name: 'Bart'},{name: 'Lisa'},{name: 'Maggie'},{name: 'Homer'},{name: 'Marge'}]))
 console.log(list([{name: 'Bart'},{name: 'Lisa'},{name: 'Maggie'}]))
 console.log(list([{name: 'Bart'},{name: 'Lisa'}]))
+
+
+
+function validParentheses(parens) {
+  // if(parens.length % 2) return false;
+  // if(parens.split("").filter((el) => el === "(").length !== parens.split("").filter((el) => el === ")").length) {
+  //   return false
+  // }
+
+  // let stack = []
+  // let obj = {"(": ")"}
+  
+  // for(let i = 0; i < parens.length; i++) {
+  //   let top = stack[stack.length - 1]
+  //   if(obj[parens[i]]) {
+  //     stack.push(parens[i])
+  //   } else {
+  //     if (parens[i] === obj[top]) {
+  //       stack.pop()
+  //     }
+  //   }
+  // }
+  // return stack.length > 0 ? false : true
+  let n = 0;
+  for (let i = 0; i < parens.length; i++) {
+    if (parens[i] === '(') n++;
+    if (parens[i] === ')') n--;
+    if (n < 0) return false;
+  }
+  return n === 0;
+}
+
+
+console.log(validParentheses( "()))" ))
+console.log(validParentheses( ")" ))
+console.log(validParentheses( "" ))
+console.log(validParentheses( "())(" ))
+console.log(validParentheses( "()" ))
+console.log(validParentheses( "())" ))
+console.log(validParentheses( "())(()" ))

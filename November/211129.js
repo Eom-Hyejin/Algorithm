@@ -1,4 +1,4 @@
-function isPangram (string) {
+function isPangram(string) {
   return 'abcdefghijklmnopqrstuvwxyz'.split('')
   .every((x) => string.toLowerCase().includes(x));
 
@@ -23,7 +23,7 @@ console.log(isPangram("ABCD45EFGH,IJK,LMNOPQR56STUVW3XYZ"))
 
 
 
-function divisors (integer) {
+function divisors(integer) {
   let result = []
   for(let i = 2; i < integer; i++) {
     if(integer % i === 0) {
@@ -40,7 +40,7 @@ console.log(divisors(13))
 
 
 
-function isPrime (num) {
+function isPrime(num) {
   if(num <= 1) {
     return false;
   }
@@ -62,7 +62,7 @@ console.log(isPrime(45))
 
 
 
-function comp (array1, array2) {
+function comp(array1, array2) {
   if(array1 === null || array2 === null) return false;
   array1 = array1.sort((a, b) => a - b).map((el) => Math.pow(el, 2))
   array2 = array2.sort((a, b) => a - b)
@@ -74,4 +74,4 @@ function comp (array1, array2) {
 console.log(comp([121, 144, 19, 161, 19, 144, 19, 11], 
   [11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19]))
 
-  console.log(comp([ 121, 144, 19, 161, 19, 144, 19, 11, 1008 ], [ 121, 14641, 20736, 36100, 25921, 361, 20736, 361 ]))
+console.log(comp([ 121, 144, 19, 161, 19, 144, 19, 11, 1008 ], [ 121, 14641, 20736, 36100, 25921, 361, 20736, 361 ]))

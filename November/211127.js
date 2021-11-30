@@ -15,7 +15,7 @@ console.log(rowSumOddNumbers(4))
 
 // 정규표현식 공부 다시하기!!!!!
 
-function validatePIN (pin) {
+function validatePIN(pin) {
   return /^(\d{4}|\d{6})$/.test(pin);
 }
 
