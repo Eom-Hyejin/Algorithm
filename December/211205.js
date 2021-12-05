@@ -18,3 +18,20 @@ console.log(reverseWords('The quick brown fox jumps over the lazy dog.'))
 console.log(reverseWords('apple'))
 console.log(reverseWords('a b c d'))
 console.log(reverseWords('double  spaced  words'))
+
+
+
+
+function countSmileys (arr) {
+  // let haveNotNose = arr.filter((el) => el.length === 2).filter((el) => (el.includes(':') || el.includes(';')) && (el.includes('D') || el.includes(')')))
+  // let haveNose = arr.filter((el) => el.length === 3).filter((el) => (el.includes(':') || el.includes(';')) && (el.includes('-') || el.includes('~')) && (el.includes('D') || el.includes(')')))
+  
+  // return haveNotNose.length + haveNose.length
+
+  return arr.filter(x => /^[:;][-~]?[)D]$/.test(x)).length;
+}
+
+
+console.log(countSmileys([]))
+console.log(countSmileys([ ':-)', ';~D', ':-D', ':_D' ]), 3)
+console.log(countSmileys([ ':---)', '))', ';~~D', ';D' ]), 1)
