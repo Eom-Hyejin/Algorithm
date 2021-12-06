@@ -39,3 +39,22 @@ function longestConsec (strarr, k) {
 // console.log(longestConsec(["it","wkppv","ixoyx", "3452", "zzzzzzzzzzzz"], 15))
 // console.log(longestConsec(["it","wkppv","ixoyx", "3452", "zzzzzzzzzzzz"], 0))
 console.log(longestConsec([ 'wlwsasphmxx', 'owiaxujylentrklctozmymu', 'wpgozvxxiu' ], 2))
+
+
+
+
+function reverseWords (str) {
+  return str.split(" ").reverse().join(" ")
+}
+
+
+
+
+function invert (arr) {
+  return arr.map((el) => -1*el)
+}
+
+
+console.log(invert([1,2,3,4,5]))
+console.log(invert([1,-2,3,-4,5]))
+console.log(invert([0]))
