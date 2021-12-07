@@ -74,3 +74,38 @@ function countPositivesSumNegatives (input) {
 console.log(countPositivesSumNegatives(null))
 console.log(countPositivesSumNegatives([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]))
 console.log(countPositivesSumNegatives([0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14]))
+
+
+
+
+function validBraces (braces) {
+  if(braces.length % 2) {
+    return false;
+  }
+
+  let obj = {
+    "(" : ")",
+    "[" : "]",
+    "{" : "}"
+  }
+
+  let stack = []
+
+  for(let i = 0; i < braces.length; i++) {
+    let top = stack[stack.length - 1]
+    if(obj[braces[i]]) {
+      stack.push(braces[i])
+    } else {
+      if(braces[i] === obj[top]) {
+        stack.pop()
+      }
+    }
+  }
+  return stack.length > 0 ? false : true
+}
+
+
+console.log(validBraces("()"))
+console.log(validBraces("[(])"))
+console.log(validBraces("(}" ))
+console.log(validBraces("[({})](]"))
