@@ -90,7 +90,6 @@ function validBraces (braces) {
   }
 
   let stack = []
-
   for(let i = 0; i < braces.length; i++) {
     let top = stack[stack.length - 1]
     if(obj[braces[i]]) {
