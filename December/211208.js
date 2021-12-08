@@ -95,3 +95,23 @@ console.log(snail([[1, 2, 3, 4, 5]
                   ,[11, 12, 13, 14, 15] 
                   ,[16, 17, 18, 19, 20]
                   ,[21, 22, 23, 24, 25]]))
+
+
+
+
+function solution (string) {
+  let str = ''
+  for(let i = 0; i < string.length; i++) {
+    if(string[i] === string[i].toUpperCase()) {
+      str += ` ${string[i]}`
+    } else {
+      str += string[i]
+    }
+  }
+  return str
+}
+
+
+console.log(solution('identifier'))
+console.log(solution('camelCasing'))
+console.log(solution('camelCasingTest'))
