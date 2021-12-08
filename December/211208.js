@@ -100,15 +100,16 @@ console.log(snail([[1, 2, 3, 4, 5]
 
 
 function solution (string) {
-  let str = ''
-  for(let i = 0; i < string.length; i++) {
-    if(string[i] === string[i].toUpperCase()) {
-      str += ` ${string[i]}`
-    } else {
-      str += string[i]
-    }
-  }
-  return str
+  // let str = ''
+  // for(let i = 0; i < string.length; i++) {
+  //   if(string[i] === string[i].toUpperCase()) {
+  //     str += ` ${string[i]}`
+  //   } else {
+  //     str += string[i]
+  //   }
+  // }
+  // return str
+  return(string.replace(/([A-Z])/g, ' $1'));
 }
 
 
