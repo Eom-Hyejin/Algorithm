@@ -35,3 +35,18 @@ console.log(formatDuration(62))
 console.log(formatDuration(120))
 console.log(formatDuration(3600))
 console.log(formatDuration(3662))
+
+
+
+
+function bmi(weight, height) {
+  let bmi = weight / height ** 2
+  console.log(bmi)
+  if(bmi <= 18.5) return "Underweight"
+  if(bmi <= 25.0) return "Normal"
+  if(bmi <= 30.0) return "Overweight"
+  if(bmi > 30) return "Obese"
+}
+
+
+console.log(bmi(83, 1.81))
