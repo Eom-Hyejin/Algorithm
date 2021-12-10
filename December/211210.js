@@ -13,3 +13,19 @@ console.log(generateHashtag(""))
 console.log(generateHashtag("Do We have A Hashtag"))
 console.log(generateHashtag("Codewars is nice"))
 console.log(generateHashtag("     "))
+
+
+
+
+function produceFib (prod) {
+  let n = 0;
+  let nPlus = 1
+  while(n*nPlus < prod) {
+    nPlus += n
+    n = nPlus - n;
+  }
+  return [n, nPlus, n*nPlus === prod]
+}
+
+console.log(produceFib(4895))
+console.log(produceFib(5895))
