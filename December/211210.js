@@ -29,3 +29,13 @@ function produceFib (prod) {
 
 console.log(produceFib(4895))
 console.log(produceFib(5895))
+
+
+
+
+function fakeBin (x) {
+  return String(x).split("").map((el) => Number(el) >= 5 ? 1 : 0).join("")
+}
+
+
+console.log(fakeBin(45385593107843568), 01011110001100110)
