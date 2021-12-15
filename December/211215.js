@@ -69,3 +69,25 @@ console.log(simpleMultiplication(1))
 
 
 
+function firstNonRepeatingLetter (s) {
+  // let low = s.toLowerCase()
+  // for(let i = 0; i < s.length; i++) {
+  //   if(low.indexOf(low[i]) === low.lastIndexOf(low[i])) {
+  //     return s[i]
+  //   }
+  // }
+  // return ""
+  for(let i in s) {
+    if(s.match(new RegExp(s[i],"gi")).length === 1) {
+      return s[i];
+    }
+  }
+  return '';
+}
+
+
+console.log(firstNonRepeatingLetter('a'))
+console.log(firstNonRepeatingLetter('stress'))
+console.log(firstNonRepeatingLetter('moonmen'))
+console.log(firstNonRepeatingLetter('sTreSS'))
+console.log(firstNonRepeatingLetter("Go hang a salami, I'm a lasagna hog!"))
