@@ -14,9 +14,10 @@ function orderWeight (string) {
   let weightNum = string.split(" ").map((el) => [el.split("").reduce((acc, cur) => Number(acc) + Number(cur), 0)])
   let num = string.split(" ")
   for(let i = 0; i < weightNum.length; i++) {
-    weightNum[i][0] = num[i]
+    weightNum[i][1] = num[i]
   }
-  console.log(string)  
+  let result = []
+  weightNum.sort((a, b) => b[0] - a[0])
   console.log(weightNum)  
 }
 
