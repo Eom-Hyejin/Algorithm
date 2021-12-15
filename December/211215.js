@@ -41,3 +41,27 @@ function orderWeight(str) {
 
 console.log(orderWeight("103 123 4444 99 2000"))
 console.log(orderWeight("2000 1234000 44444444 9999 11 11 22 123 10003"))
+
+
+
+
+function rentalCarCost (d) {
+  if (d < 3) {
+    return d*40
+  } else if (d >= 3 && d < 7) {
+    return d*40 - 20
+  } else {
+    return d*40 - 50
+  }
+}
+
+
+
+
+function simpleMultiplication (number) {
+  return number % 2 ? number * 9 : number * 8
+}
+
+
+console.log(simpleMultiplication(2))
+console.log(simpleMultiplication(1))
