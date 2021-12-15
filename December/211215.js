@@ -65,3 +65,7 @@ function simpleMultiplication (number) {
 
 console.log(simpleMultiplication(2))
 console.log(simpleMultiplication(1))
+
+
+
+
