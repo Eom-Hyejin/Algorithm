@@ -68,3 +68,18 @@ console.log(zeros(0))
 console.log(zeros(5))
 console.log(zeros(6))
 console.log(zeros(30))
+
+
+
+
+function countBy (x, n) {
+  let result = []
+  for(let i = 1; i <= n; i++){
+    result.push(x*i)
+  }
+  return result
+}
+
+
+console.log(countBy(1, 10))
+console.log(countBy(2, 5))
