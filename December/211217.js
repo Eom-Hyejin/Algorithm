@@ -22,7 +22,7 @@ function sumDigPow (a, b) {
   //   }
   // }
   // return result
-  
+
   let result = [];
   while(a <= b){
     if(a.toString().split('').reduce((x,y,i)=>x + y ** (i + 1),0) == a)
@@ -38,3 +38,33 @@ console.log(sumDigPow(24, 40))
 console.log(sumDigPow(1, 100))
 console.log(sumDigPow(10, 100))
 console.log(sumDigPow(90, 100))
+
+
+
+
+function zeros (n) {
+  // let num = 0
+  // while (n > 0) {
+  //   n = Math.floor(n/5)
+  //   num+= n
+  // }
+  // return num
+
+  // return n/5 < 1 ? 0 : Math.floor(n/5) + zeros(n/5);
+
+  let result = 0;
+    for (let i = 5; i <= n; i += 5) {
+      let num = i;
+      while (num % 5 === 0) {
+        num /= 5;
+        result++;
+      }
+    }
+  return result;
+}
+
+
+console.log(zeros(0))
+console.log(zeros(5))
+console.log(zeros(6))
+console.log(zeros(30))
