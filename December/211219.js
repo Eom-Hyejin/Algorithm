@@ -36,6 +36,7 @@ function wave (str) {
     let word = str.split("").map((el, idx) => idx === i ? el = el.toUpperCase() : el).join("")
     result.push(word)
   }
+  result = result.filter((el) => el !== str)
   return result
 }
 
