@@ -16,3 +16,13 @@ console.log(solution(1))
 console.log(solution(2))
 console.log(solution(10))
 console.log(solution(2008))
+
+
+
+
+function greet (name, owner) {
+  return name === owner ? 'Hello boss' : 'Hello guest'
+}
+
+
+console.log(greet('Daniel', 'Daniel'))
