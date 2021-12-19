@@ -26,3 +26,21 @@ function greet (name, owner) {
 
 
 console.log(greet('Daniel', 'Daniel'))
+
+
+
+
+function wave (str) {
+  let result = []
+  for(let i = 0; i < str.length; i++) {
+    let word = str.split("").map((el, idx) => idx === i ? el = el.toUpperCase() : el).join("")
+    result.push(word)
+  }
+  return result
+}
+
+
+console.log(wave("hello"))
+console.log(wave("codewars"))
+console.log(wave(""))
+console.log(wave("two words"))
