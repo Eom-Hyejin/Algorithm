@@ -82,3 +82,22 @@ console.log(validSolution([
   [2, 8, 7, 4, 1, 9, 6, 3, 5],
   [3, 0, 0, 4, 8, 1, 1, 7, 9]
 ]))
+
+
+
+
+function firstNonConsecutive (arr) {
+  if(arr[0]+arr.length-1 === arr[arr.length-1]) {
+    return null
+  }
+  
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i]+1 !== arr[i+1]) {
+      return arr[i+1]
+    }
+  }
+}
+
+
+console.log(firstNonConsecutive([1, 2, 3, 4, 6, 7, 8]))
+console.log(firstNonConsecutive([1, 2, 3, 4, 5, 6]))
