@@ -44,3 +44,17 @@ console.log(solution("apples, plums % and bananas\npears\noranges !applesauce", 
 "apples, plums\npears\noranges")
 console.log(solution("Q @b\nu\ne -e f g", ["@", "-"]),
 "Q\nu\ne")
+
+
+
+
+function sumArray(array) {
+  if(array && array.length > 1) {
+    const arrayNum = array.sort((a, b) => a - b).slice(1, -1)
+    return arrayNum.reduce((acc, cur) => acc + cur,0)
+  }
+  return 0
+}
+
+
+console.log(sumArray([6, 2, 1, 8, 10]))
