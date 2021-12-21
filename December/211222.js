@@ -23,3 +23,24 @@ console.log(scramble('rkqodlw','world'))
 console.log(scramble('katas','steak'))
 console.log(scramble('scriptsjava','javascripts'))
 console.log(scramble('scriptjavx', 'javascript'))
+
+
+
+
+function solution (input, markers) {
+  input = input.split("\n")
+  for(let i = 0; i < markers.length; i++) {
+    for(let j = 0; j < input.length; j++) {
+      if(input[j].includes(markers[i])) {
+        input[j] = input[j].slice(0, input[j].indexOf(markers[i]))
+      }
+    }
+  }
+  return input.map((el) => el.trim()).join("\n")
+}
+
+
+console.log(solution("apples, plums % and bananas\npears\noranges !applesauce", ["%", "!"]),
+"apples, plums\npears\noranges")
+console.log(solution("Q @b\nu\ne -e f g", ["@", "-"]),
+"Q\nu\ne")
