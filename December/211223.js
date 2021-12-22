@@ -48,3 +48,23 @@ console.log(rgb(0, 0, 0))
 console.log(rgb(0, 0, -20))
 console.log(rgb(300, 255, 255))
 console.log(rgb(173, 255, 47))
+
+
+
+
+function solution (list) {
+  let result = [[list[0]]]
+  for(let i = 1; i < list.length; i++) {
+    let a = result[result.length-1]
+    if (a[a.length-1] + 1 !== list[i]) {
+      result.push([list[i]])
+    } else {
+      a.push(list[i])
+    }
+  }
+  return result.map((el) => el.length <= 2 ? el : `${el[0]}-${el[el.length-1]}`).join(",")
+}
+
+
+console.log(solution([-6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8, 9, 10, 11, 14, 15, 17, 18, 19, 20]),
+"-6,-3-1,3-5,7-11,14,15,17-20")
