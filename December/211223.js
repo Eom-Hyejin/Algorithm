@@ -31,18 +31,18 @@ console.log(humanReadable(359999))
 
 
 function rgb (r, g, b) {
-  function convert (color) {
-    if(color <= 0) {
-      return '00';
-    }
-    else if(color >= 255) {
-      return 'FF';
-    }
-    return color.toString(16).toUpperCase();
-  }
-  return convert(r) + convert(g) + convert(b); 
+  return convertColor(r) + convertColor(g) + convertColor(b); 
 }
 
+function convertColor (color) {
+  if(color <= 0) {
+    return '00';
+  }
+  else if(color >= 255) {
+    return 'FF';
+  }
+  return color.toString(16).toUpperCase();
+}
 
 console.log(rgb(0, 0, 0))
 console.log(rgb(0, 0, -20))
