@@ -98,3 +98,43 @@ function makeMin (A, B) {
 
 console.log(makeMin([1, 4, 2], [5, 4, 4]))
 console.log(makeMin([1, 2], [3, 4]))
+
+
+
+
+function correctBracket (s) {
+  // if(s.length % 2) {
+  //   return false
+  // }
+
+  // if(s[0] === ")") {
+  //   return false
+  // }
+  // let q = []
+  // for(let i = 0; i < s.length; i++) {
+  //   if(s[i] === "(") {
+  //     q.push(s[i])
+  //   } else if(q.length === 0 && s[i] === ")") {
+  //     return false
+  //   } else if (s[i] === ")") {
+  //     q.pop()
+  //   }
+  // }
+  // return q.length === 0
+
+  let count = 0
+  for (let el of s) {
+      count += el === '('? 1: -1
+      if(count < 0) {
+          return false
+      }
+  }
+  return count === 0? true: false;
+}
+
+
+console.log(correctBracket("()()"))
+console.log(correctBracket("(())()"))
+console.log(correctBracket(")()("))
+console.log(correctBracket("(()("))
+console.log(correctBracket("())("))
