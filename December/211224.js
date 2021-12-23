@@ -155,3 +155,19 @@ function makeJadenCase (s) {
 
 console.log(makeJadenCase("3people unFollowed me"))
 console.log(makeJadenCase("for the last week"))
+
+
+
+
+function nextNum (n) {
+  let count = n.toString(2).split("").filter((el) => el === '1').length
+  for(let i = n+1; i < n * 2; i++) {
+    if(i.toString(2).split("").filter((el) => el === '1').length === count) {
+      return i
+    }
+  }
+}
+
+
+console.log(nextNum(78))
+console.log(nextNum(15))
