@@ -138,3 +138,20 @@ console.log(correctBracket("(())()"))
 console.log(correctBracket(")()("))
 console.log(correctBracket("(()("))
 console.log(correctBracket("())("))
+
+
+
+
+function makeJadenCase (s) {
+//   return s.toLowerCase().split(" ").map(el => {
+//     let ele = el.split("")
+//     if(ele[0] != null) ele[0] = ele[0].toUpperCase();
+//     return ele.join(''); 
+// }).join(' '); 
+  return s.split(" ").map(v => v.charAt(0).toUpperCase() + v.substring(1).toLowerCase()).join(" ");
+}
+
+// v를 split적용 시 빈 문자열인 경우 undefined가 나와서 runtime에러 발생
+
+console.log(makeJadenCase("3people unFollowed me"))
+console.log(makeJadenCase("for the last week"))
