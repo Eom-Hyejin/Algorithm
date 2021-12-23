@@ -19,7 +19,7 @@ console.log(change124(4))
 
 
 
-// function solution (arr) {
+// function nlcm (arr) {
 //   let result = []
 //   while(arr.length > 0) {
 //     let pop = arr.shift()
@@ -41,7 +41,7 @@ console.log(change124(4))
 //   return a % b === 0 ? b : gcd(b, a % b)
 // }
 
-function solution (num) {
+function nlcm (num) {
   return num.reduce((a, b) => a * b / gcd(a, b))
 }
 
@@ -49,6 +49,34 @@ function gcd (a, b) {
   return a % b === 0 ? b : gcd(b, a % b)
 }
 
-console.log(solution([2, 6, 8, 14]))
-console.log(solution([1, 2, 3]))
+// 곲한 값에 최대공약수로 나누면 최소공배수
 
+console.log(nlcm([2, 6, 8, 14]))
+console.log(nlcm([1, 2, 3]))
+
+
+
+
+function fib (n) {
+  // let arr = [0, 1]
+  // const result = (n) => {
+  //   if(arr[n] !== undefined) {
+  //     return n >= 2 ? arr[n] % 1234567 : arr[n]
+  //   } else {
+  //     arr[n] = result(n-1) + result(n-2)
+  //     return n >= 2 ? arr[n] % 1234567 : arr[n]
+  //   }
+  // }
+  // return result(n)
+  
+  let fib = [0, 1];
+  for(let i=2; i<=n; i++) {
+      fib[i] = (fib[i-1]+fib[i-2])%1234567;
+  }
+  return fib[n];
+}
+
+
+
+console.log(fib(3))
+console.log(fib(5))
