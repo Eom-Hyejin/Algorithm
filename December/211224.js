@@ -68,7 +68,7 @@ function fib (n) {
   //   }
   // }
   // return result(n)
-  
+
   let fib = [0, 1];
   for(let i=2; i<=n; i++) {
       fib[i] = (fib[i-1]+fib[i-2])%1234567;
@@ -77,6 +77,24 @@ function fib (n) {
 }
 
 
-
 console.log(fib(3))
 console.log(fib(5))
+
+
+
+
+function makeMin (A, B) {
+  A = A.sort((a, b) => a - b)
+  B = B.sort((a, b) => b - a)
+  // let count = 0
+  // for(let i = 0; i < A.length; i++) {
+  //   count += A[i] * B[i]
+  // }
+  // return count
+
+  return A.reduce((total, val, idx) => total + val * B[idx], 0)
+}
+
+
+console.log(makeMin([1, 4, 2], [5, 4, 4]))
+console.log(makeMin([1, 2], [3, 4]))
