@@ -72,3 +72,90 @@ function targetNum (numbers, target) {
 console.log(targetNum([1, 1, 1, 1, 1], 3))
 console.log(targetNum([1, 1, 1, 1, 2], 2))
 console.log(targetNum([1, 1, 4, 1, 3], 2))
+
+
+
+
+function visitedLength (dirs) {
+  const cache = {};
+  const obj = {
+    "U": [1, 0],
+    "D": [-1, 0],
+    "R": [0, 1],
+    "L": [0, -1],
+  }
+
+  function ignore(y, x) {
+    return y > 5 || y < -5 || x > 5 || x < -5;
+  }
+
+  function move(dirs) {
+    let result = 0;
+    let nowX = 0, nowY = 0;
+
+    for (const mv of dirs) {
+      const [dy, dx] = obj[mv];
+      const nextY = nowY + dy;
+      const nextX = nowX + dx;
+
+      if (ignore(nextY, nextX)) {
+        continue;
+      }
+
+      const from = `${nowY},${nowX}`;
+      const to = `${nextY},${nextX}`;
+
+      if (!cache[from]) cache[from] = {}
+      if (!cache[to]) cache[to] = {}
+
+      nowY = nextY;
+      nowX = nextX;
+
+      if (cache[from][to] || cache[to][from]) {
+        continue;
+      }
+
+      cache[from][to] = true;
+      cache[to][from] = true;
+      result++;
+    }
+    return result;
+  }
+
+  return move(dirs)
+
+  // var x = 5;
+  // var y = 5;
+  // var map = {};
+  // dirs.split('').forEach(command => {
+  //     switch (command) {
+  //         case "U":
+  //             if (y >= 10) break;
+  //             map[`${x},${y}-${x},${y+1}`] = true
+  //             y += 1;
+  //             break;
+  //         case "D":
+  //             if (y <= 0) break;
+  //             map[`${x},${y-1}-${x},${y}`] = true
+  //             y -= 1;
+  //             break;
+  //         case "R":
+  //             if (x >= 10) break;
+  //             map[`${x},${y}-${x+1},${y}`] = true
+  //             x += 1;
+  //             break;
+  //         case "L":
+  //             if (x <= 0) break;
+  //             map[`${x-1},${y}-${x},${y}`] = true
+  //             x -= 1;
+  //             break;
+  //     }
+  // });
+  // return Object.keys(map).length;
+}
+
+
+console.log(visitedLength("ULURRDLLU"))
+console.log(visitedLength("LULLLLLLU"))
+
+
