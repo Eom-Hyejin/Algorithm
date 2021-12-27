@@ -21,7 +21,7 @@ function landing (land) {
   //   land[i][3] = Math.max(land[i+1][0], land[i+1][1], land[i+1][2])+land[i][3];
   // }
   // return Math.max(...land[0]);
-  
+
   let answer = 0;
     
   for(let i = 0; i < land.length; i++){
@@ -47,3 +47,28 @@ console.log(landing([[1,2,3,5]
 console.log(landing([[1,2,3,5]
                     ,[5,6,7,100]  
                     ,[4,3,2,1]]))
+
+
+
+
+function targetNum (numbers, target) {
+  let result = 0;
+  count(0, 0);
+  function count(x, value) {
+    if (x < numbers.length) {
+      count(x + 1, value + numbers[x]);
+      count(x + 1, value - numbers[x]);
+    } else {
+      if (value === target) {
+        result++;
+      }
+    }
+  }
+  return result;
+}
+
+
+
+console.log(targetNum([1, 1, 1, 1, 1], 3))
+console.log(targetNum([1, 1, 1, 1, 2], 2))
+console.log(targetNum([1, 1, 4, 1, 3], 2))
