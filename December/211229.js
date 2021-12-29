@@ -106,3 +106,32 @@ function findPrime(numbers) {
 
 console.log(findPrime("17"))
 console.log(findPrime("011"))
+
+
+
+
+function deletePair(s) {
+  // s = s.split("")
+  // while(s.length) {
+  //   for(let i = 0; i < s.length; i++) {
+  //     if(s[i] === s[i+1]) {
+  //       s.splice(s.indexOf(s[i]), 2)
+  //     }
+  //   }
+  //   return s[0] === s[1] ? 0 : 1
+  // }
+
+  const q = []
+  for(let i = 0; i < s.length; i++) {
+    if(!q.length || q[q.length-1] !== s[i]) {
+      q.push(s[i])
+    } else {
+      q.pop()
+    }
+  }
+  return q.length ? 0 : 1
+}
+
+
+console.log(deletePair("baabaa"))
+console.log(deletePair("cdcd"))
