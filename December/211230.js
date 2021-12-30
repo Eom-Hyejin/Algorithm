@@ -1,16 +1,30 @@
-function solution1 (schedule) {
-  let mon = []
-  
+function solution5 (P) {
+  let result = []
+  for(let i = 1; i < P.length; i++) {
+    let word = isPanlindrome(String(P[0] + P[i]))
+    let word2 = isPanlindrome(String(P[i] + P[0]))
+    if(word || word2) {
+      result.push(P[i])
+    }
+  }
+  return result
+}
+
+function isPanlindrome(word) {
+  for(let i = 0; i < Math.floor(word.length / 2); i++) {
+    let left = word[i]
+    let right = word[word.length-1-i]
+    if(left != right) {
+      return false
+    }
+  }
+  return true
 }
 
 
-console.log(solution1([["MO 12:00 WE 14:30", "MO 12:00", "MO 15:00", "MO 18:00"], 
-["TU 09:00", "TU 10:00", "TU 15:00", "TU 18:00"], 
-["WE 09:00", "WE 12:00", "WE 15:00", "WE 18:00"], 
-["TH 09:30", "TH 11:30", "TH 15:00", "TH 18:00"], 
-["FR 15:00", "FR 15:00", "FR 15:00", "FR 15:00"]]))
 
-
+console.log(solution5(["11","111","11","211"]))
+console.log(solution5(["21","123","111","11"]))
 
 
 function solution4 (n, k, bulbs) {
