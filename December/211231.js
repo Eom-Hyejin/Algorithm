@@ -95,3 +95,24 @@ function isSubsetOf (base, sample) {
 console.log(isSubsetOf([1, 2, 3, 4, 5], [1, 3]))
 console.log(isSubsetOf([1, 2, 3, 4, 5], [6, 7]))
 console.log(isSubsetOf([10, 99, 123, 7], [11, 100, 99, 123]))
+
+
+
+
+function bubbleSort (arr) {
+  let count = 1
+  for(let i = 0; i < arr.length * count; i++) {
+    count = 0
+    for(let j = 0; j < arr.length - i; j++) {
+      if(arr[j] > arr[j+1]) {
+        [arr[j], arr[j+1]] = [arr[j+1], arr[j]]
+        count++
+      }
+    }
+  }
+  return arr
+}
+
+
+console.log(bubbleSort([2, 1, 3]))
+console.log(bubbleSort([2, 1, 3, 6, 5, 4]))
