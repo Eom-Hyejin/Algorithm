@@ -107,3 +107,59 @@ function primePassword (curPwd, newPwd) {
 
 console.log(primePassword(1033, 1033))
 console.log(primePassword(3733, 8779))
+
+
+
+
+function mergeSort (arr) {
+  if(arr.length === 1) return arr
+
+  const left = arr.slice(0, arr.length/2)
+  const right = arr.slice(arr.length/2)
+
+  return merge(mergeSort(left), mergeSort(right))
+}
+
+function merge(left, right) {
+  const result = []
+
+  while(left.length && right.length) {
+    if(left[0] <= right[0]) {
+      result.push(left.shift())
+    } else {
+      result.push(right.shift())
+    }
+  }
+  return [...result, ...left, ...right]
+}
+
+
+console.log(mergeSort([3, 1, 21]))
+console.log(mergeSort([3, 1, 21, 74, 2, 4, 8, 47, 3, 25]))
+console.log(mergeSort([4, 7, 4, 3, 9, 1, 2]))
+
+
+
+
+function LCS (str1, str2) {
+  const M = str1.length
+  const N = str2.length
+  const count = Array(M+1).fill().map(() => Array(N+1).fill(-1))
+  
+  for(let i = 0; i <= M; i++) {
+    for(let j = 0; j <= N; j++) {
+      if(i === 0 || j === 0) {
+        count[i][j] = 0
+      } else if (str1[i-1] === str2[j-1]) {
+        count[i][j] = count[i-1][j-1] +1
+      } else {
+        count[i][j] = Math.max(count[i][j-1], count[i-1][j])
+      }
+    }
+  }
+  return count[M][N]
+}
+
+
+console.log(LCS('abcd', 'aceb'))
+console.log(LCS('acaykp', 'capcak'))
